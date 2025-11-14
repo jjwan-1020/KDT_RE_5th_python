@@ -25,12 +25,12 @@ print(my_list[-1])
 my_list[3] = -1
 print(my_list)
 
-number = input("네 자릿수 정수를 입력하세요: ")
-천 = number[0]
-백 = number[1]
-십 = number[2]
-일 = number[3]
-print(천, 백, 십, 일)
+# number = input("네 자릿수 정수를 입력하세요: ")
+# 천 = number[0]
+# 백 = number[1]
+# 십 = number[2]
+# 일 = number[3]
+# print(천, 백, 십, 일)
 
 # --------------
 # 슬라이싱
@@ -73,7 +73,7 @@ print(data1[::-1], data2[::-1], data3[::-1])
 
 # 인덱싱, 슬라이싱 주의 사항
 my_list = [1,2,3,4]
-my_list[5] # IndexError: list index out of range 가 일어난다
+# my_list[5] # IndexError: list index out of range 가 일어난다
 
 my_list = [1,2,3,4,5]
 print(my_list[4:1:2]) # 공백([])이 나옴
@@ -87,18 +87,18 @@ print(my_list)
 del my_list[1:3] # 슬라이스 범위 삭제
 print(my_list)
 del my_list # 리스트 삭제
-print(my_list) # NameError: name 'my_list' is not defined가 나옴
+# print(my_list) # NameError: name 'my_list' is not defined가 나옴
 
 # 리스트 연결 - +
 list1 = ["가", "나", "다"]
 list2 = ["다", "라", "마"]
 new_list = list1 + list2
-print(list1, list2, new_list, sep=" / ")
+# print(list1, list2, new_list, sep=" / ")
 
 # 리스트 반복 - *
 medal = ["금", "은", "동"]
 new_list = medal * 3
-print(medal, new_list, sep=" / ")
+# print(medal, new_list, sep=" / ")
 
 #포함 여부 (in, not in)
 fruits = ["토마토", "사과", "포도", "바나나", "수박"]
@@ -159,3 +159,35 @@ numbers2 = [50, 52, 53, 51]
 new_numbers2 = sorted(numbers2)
 new_numbers2_desc = sorted(numbers2, reverse=True)
 print("7-2. sorted()", numbers2, new_numbers2, new_numbers2_desc)
+
+# 뒤집기
+my_numbers = [100, 101, 104, 103, 102]
+my_numbers.reverse()
+print("8-1. reverse()", my_numbers) # [102, 103, 104, 101, 100]
+
+my_numbers2 = list(reversed(my_numbers))
+print("8-2. reversed()", my_numbers2, my_numbers)
+
+# count, min, max, sum
+number3 = [1, 2, 2, 2, 2, 3, 4, 5, 6, 7]
+print("9. count()", number3.count(2))
+print("10. min/max", min(number3), max(number3))
+print("11. sum", sum(number3))
+
+# 실습
+p1 = ["철수", "영희"]
+p1.append("민수")
+p1.append("지훈")
+p1.pop(1)
+p1.insert(0, "수진")
+p1.pop(2)
+p1.reverse()
+print(p1)
+
+num = [5, 3, 7]
+num.extend([4, 9])
+print(max(num), min(num))
+print(sum(num))
+num.sort()
+num.pop(4)
+print(num)
