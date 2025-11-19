@@ -30,7 +30,7 @@ print(signup_date)
 
 
 
-
+'''
 money = int(input("금액을 넣어주세요: "))
 item = input("김밥 / 삼각김밥 / 도시락 중 골라주세요: ")
 
@@ -127,5 +127,118 @@ for i in range(1, n+1):
 for x in range(2):
     for y in range(9):
         print("x, y", x*y)
+'''
+
+# 복습
+'''
+number = [3,6,1,8,4]
+for x in number:
+    print(x*2)
+
+words = ["apple", "banana", "kiwi", "grape"]
+for f_list in words:
+    fruits = len(f_list)
+    print(fruits)
+
+coordinates = [(1,2), (3,4), (5,6), (7,8)]
+for x_values, y_values in coordinates:
+    print(f"x좌표: {x_values}, y좌표: {y_values}")
+
+n = int(input("숫자 입력란: "))
+for num in range(1, n):
+    n += num
+print(n)
+
+X = int(input())
+for hunter in range(1, 10):
+    print(f"{X} x {hunter} = {X*hunter}")
+
+
+z = int(input())
+for i in range(1,z+1):
+        print("*" * i)
+
+for i in range(1, z + 1):
+     print(("*" * i).rjust(z))
+'''
+# 11.19
+'''
+secret_code = "codingon"
+user_input =  ""
+while user_input != secret_code:
+     user_input = input("비밀 코드를 입력해주세요: ")
+print("환영합니다")
+'''
+# 문제 2
+'''
+import random
+answer = random.randint(1, 100)
+print(answer)
+'''
+'''
+answer = 15
+num = 0 # 사용자에게 입력 받을 변수
+time = 0 # 실행 횟수를 저장할 수 있는 변수
+
+while num != answer:
+     num = int(input("1~100 사이의 수를 입력해주세요: "))
+     time += 1
+     
+     if num > answer:
+          print(f"정답이 {num}보다 작습니다")
+     elif num < answer:
+          print(f"정답이 {num}보다 큽니다")
+
+print(f"{time}번 만에 정답을 맞췄습니다")
+'''
+
+
+'''
+c_code = "codingonre3"
+while True:
+    user_code = input("코드를 입력해주세요: ")
+    if user_code != c_code:
+        print("정확한 코드를 입력해주세요")
+    else:
+        print("환영합니다")
+        break
+
+sum_age = 0
+times = 0
+
+while times < 5:
+    age = int(input(f"{times+1}번째 나이를 입력하세요: "))
+    if age <= 0 or age > 120:
+        continue
+    sum_age += age
+    times += 1
+
+average = sum_age / 5
+print(f"합계나이는 {sum_age}세 이며, 평균나이는 {average}세 입니다")
+'''
+# 실습4
+id = "jjwan"
+pw = "just"
+while True:
+    print("""===로그인 화면===
+1. 로그인
+2. 종료
+""")
+    choice = input("선택: ")
+    if choice == "2":
+        print("프로그램을 종료합니다.")
+        break
+    elif choice == "1":
+        while True:
+            login = input("ID: ")
+            if login == id:
+                while True:
+                    words = input("PW: ")
+                    if words == pw:
+                        print("로그인 성공!")
+                        break
+                    else:
+                        print("로그인 실패! 다시 시도해주세요")
+                        continue
 
 
