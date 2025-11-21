@@ -96,7 +96,7 @@ for i in range(11,0,-2):
 
 print("===================")
 # 실습
-'''
+
 n = int(input())
 for num in range(1,n):
     n += num
@@ -118,14 +118,14 @@ total = int(input("숫자를 입력하세요: "))
 for o in range(1, total+1):
     if o % 2 == 0 and o % 5 ==0:
         print(o)
-'''
+
 
 
 # 루프 제어문
 # - 특정 조건 하에서만 작동하도록 구현
 
 # break: 반복을 즉시 중단
-'''
+
 for i in range(10):
     if i == 5:
         break
@@ -141,7 +141,7 @@ for i in range(5):
     print(i)
 
 print("반복 종료")
-'''
+
 # pass
 for i in range(10):
     pass

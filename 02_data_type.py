@@ -15,11 +15,11 @@ my_str2 = "" # 공백 문자열
 my_str3 = "안녕하세요"
 
 # 문자열 여러줄로 만들기
-# multi_str = """코딩을 하는
-#처음 배우는3
-#파이썬 언어
-#"""
-# print(multi_str)
+multi_str = """코딩을 하는
+처음 배우는3
+파이썬 언어
+"""
+print(multi_str)
 print(type(my_str1)) # <class 'str">
 
 # 따옴표 속에 따옴표 쓰기
@@ -79,23 +79,23 @@ print(bool(1)) # True
 name = "정재완"
 age = 26
 
-# print("제 이름은", name, "이고, 나이는", age, "입니다")
-#print(f"제 이름은 {name}이고, 나이는 {age}입니다.")
+print("제 이름은", name, "이고, 나이는", age, "입니다")
+print(f"제 이름은 {name}이고, 나이는 {age}입니다.")
 
-# name = "기생충"
-# director = "봉준호"
-# year = 2019
-# genre = "drama, black comedy"
-# print(f"Title: {name} Director: {director} Year: {year} Genre: {genre}")
+name = "기생충"
+director = "봉준호"
+year = 2019
+genre = "drama, black comedy"
+print(f"Title: {name} Director: {director} Year: {year} Genre: {genre}")
 
 name = "정재완"
 age = "26"
 mbti = "isfj"
 
-#print(f"""안녕하세요.
-#제 이름은 {name}이고,
-#나이는 {age}살이며,
-#MBTI는 {mbti}입니다.""")
+print(f"""안녕하세요.
+제 이름은 {name}이고,
+나이는 {age}살이며,
+MBTI는 {mbti}입니다.""")
 
 # 실습 1
 title, director, year, genre = "Inception", "Christopher Nolan", 2020, "sci-fi"

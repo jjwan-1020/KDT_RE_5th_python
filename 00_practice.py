@@ -130,7 +130,7 @@ for x in range(2):
 '''
 
 # 복습
-'''
+
 number = [3,6,1,8,4]
 for x in number:
     print(x*2)
@@ -160,22 +160,22 @@ for i in range(1,z+1):
 
 for i in range(1, z + 1):
      print(("*" * i).rjust(z))
-'''
+
 # 11.19
-'''
+
 secret_code = "codingon"
 user_input =  ""
 while user_input != secret_code:
      user_input = input("비밀 코드를 입력해주세요: ")
 print("환영합니다")
-'''
+
 # 문제 2
-'''
+
 import random
 answer = random.randint(1, 100)
 print(answer)
-'''
-'''
+
+
 answer = 15
 num = 0 # 사용자에게 입력 받을 변수
 time = 0 # 실행 횟수를 저장할 수 있는 변수
@@ -190,10 +190,9 @@ while num != answer:
           print(f"정답이 {num}보다 큽니다")
 
 print(f"{time}번 만에 정답을 맞췄습니다")
-'''
 
 
-'''
+
 c_code = "codingonre3"
 while True:
     user_code = input("코드를 입력해주세요: ")
@@ -215,30 +214,73 @@ while times < 5:
 
 average = sum_age / 5
 print(f"합계나이는 {sum_age}세 이며, 평균나이는 {average}세 입니다")
-'''
+
 # 실습4
 id = "jjwan"
 pw = "just"
+
 while True:
-    print("""===로그인 화면===
-1. 로그인
-2. 종료
-""")
-    choice = input("선택: ")
-    if choice == "2":
-        print("프로그램을 종료합니다.")
+    id_input = input("ID를 입력해주세요: ")
+
+    if id_input != id:
+        print("존재하지않는 ID입니다")
+        continue
+    while True:
+        pw_input = input("비밀번호를 입력하세요: ")
+        if pw_input != pw:
+            print("비밀번호가 틀립니다")
+            continue
+
+        print("로그인에 성공했습니다")
         break
-    elif choice == "1":
-        while True:
-            login = input("ID: ")
-            if login == id:
-                while True:
-                    words = input("PW: ")
-                    if words == pw:
-                        print("로그인 성공!")
-                        break
-                    else:
-                        print("로그인 실패! 다시 시도해주세요")
-                        continue
+    break
 
 
+# 실습 2
+# 아이디, 비번 동시에 받는 경우
+id = "jjwan"
+pw = "just"
+
+while True:
+    print("==== 로그인 화면 ======")
+    print("1. 로그인")
+    print("2. 종료")
+    main_sel = input("선택: ")
+
+    if main_sel == "2":
+        print("프로그램을 종료합니다")
+        break
+    elif main_sel != "1":
+        print("존재하지 않는 항목입니다.\n")
+        continue
+        
+    id_input = input("ID: ")
+    pw_input = input("PW: ")
+
+    if id_input != id or pw_input != pw:
+        print("잘못된 아이디 이거나 비밀번호입니다.\n")
+        continue
+
+    print("로그인에 성공하셨습니다.\n")
+
+    # 로그인 메뉴 화면
+    while True:
+        print("==== 메뉴 ======")
+        print("1. 정보 보기")
+        print("2. 설정")
+        print("3. 로그아웃")
+        print("==============")
+        sel = input("메뉴 선택: ")
+
+        if sel == "1":
+            print("회원 정보입니다.\n")
+            continue
+        elif sel == "2":
+            print("설정 메뉴입니다.\n")
+            continue
+        elif sel == "3":
+            print("로그아웃합니다.\n")
+            break
+        else:
+            print("잘못 입력하셨습니다.\n")
+            continue
