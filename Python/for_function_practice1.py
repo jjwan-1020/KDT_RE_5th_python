@@ -120,3 +120,65 @@ login("admin", "1111")   # 실패 2회
 login("admin", "2222")   # 실패 3회 → 계정 잠김
 login("admin", "1234")   # 더 이상 로그인 불가
 logout()                 # 로그인 안돼서 로그아웃도 불가
+
+
+# 11.21
+# 실습
+def power_rec(a,b):
+    if b == 0:
+        return 1
+    return a * power_rec(a, b-1)
+    # a * a * a* ... *1 (=> b = 0)
+print("재귀함수", power_rec(2,3))
+# 2 * 2 * 2 * 1 => b = 3, b = 0이 되는 순간까지 포함 총 4개 곱
+
+
+
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n-1)
+
+print("팩토리얼", factorial(5))
+
+
+def f_num(n):
+ if n <= 0:
+     return [0]
+ elif n == 1:
+     return [0]
+ a_num = [0,1]
+ for n in range(1,n):
+     a_num.append(a_num[-1] + a_num[-2])
+ return a_num
+
+print(f_num(3))
+
+def fib_num(n):
+    if n <= 0:
+        return 0 
+    a, b = 1, 1
+
+    for n in range(1, n-1):
+        a, b = b, a + b
+    return b
+print(fib_num(7))
+     
+
+def fib_num2(c):
+    if c <= 0:
+        return 0
+    elif c <= 2:
+        return 1
+    return fib_num2(c-1) + fib_num2(c-2)
+
+print(fib_num2(6))
+
+students = [("Alice", [80,90]), ("Bob", [60,65]), ("Charlie", [70,70])]
+print(list(filter(lambda s: sum(s[1] )/ len(s[1]) >= 70, students)))
+
+sentences = ["Python is fun", "Lambda functions are powerful", "Coding is creative"]
+print(list(map(lambda str: str.split()[0], sentences)))
+
+people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
+print(sorted(people, key=lambda x : x[1]))

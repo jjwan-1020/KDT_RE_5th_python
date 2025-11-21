@@ -288,3 +288,96 @@ login("admin", "3333")
 login("admin", "4545")
 login("admin", "5554")  
 logout()                 
+
+
+# 재귀함수
+# 1. 자기 자신을 호출하는 함수
+# 2. 반드시 기본 조건 (종료 조건)이 있어야 함
+# - 큰 문제를 작은 문제로 나누었을 때 일정한 패턴이 있어야 한다
+
+import time
+
+
+def recursive_func(n):
+    #기본 조건
+    if n == 0:
+        return
+    
+    recursive_func(n-1)
+    print("재귀 호출", n)
+    time.sleep(0.05)
+
+recursive_func(5)
+    
+
+# 실습
+
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n-1)
+
+print("팩토리얼", factorial(5))
+
+
+# 람다 (lambda) 함수
+# 익명 함수
+# 간단한 함수를 한줄로 표현할 때 사용
+
+# 람다 함수의 기본 문법
+# lambda 매개변수: 표현식
+# - 표현식: 값이 반환되는 식
+
+# 일반 함수
+def add(x, y):
+    return x + y
+
+# 람다 함수
+add_func = lambda x, y: x + y
+print(add_func(3,5))
+
+# 람다로 값을 반환하고 사용을 끝내는 경우
+print((lambda x: x ** 2)(10))
+
+# 람다 함수의 활용
+# 1. map 에서 활용
+my_list = [1,2,3,4]
+
+# 일반 함수를 사용
+def square_func(x):
+    return x **2
+
+# 함수를 인자로 받는 함수
+print(list(map(square_func, my_list)))
+
+# 람다함수를 사용
+print(list(map(lambda x: x ** 2, my_list)))
+
+#  filter 에서 활용
+my_list2 = [1,2,3,4,5,6,7,8,9,10]
+
+# 일반 함수 사용
+def is_even(x):
+    return x % 2 == 0
+print(list(filter(is_even, my_list2)))
+
+print(list(filter(lambda x: x % 2 == 0, my_list2)))
+
+# 3. sorted 에서 활용
+
+my_list3 = ["apple", "banana", "watermelon", "grape"]
+print(sorted(my_list3, key=lambda word: len(word)))
+
+
+# 실습
+
+students = [("Alice", [80,90]), ("Bob", [60,65]), ("Charlie", [70,70])]
+print(list(filter(lambda s: sum(s[1]) / len(s[1]) >= 70, students)))
+
+
+sentences = ["Python is fun", "Lambda functions are powerful", "Coding is creative"]
+print(list(map(lambda str: str.split()[0], sentences)))
+
+people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
+print(sorted(people, key=lambda x: x[1]))
+
