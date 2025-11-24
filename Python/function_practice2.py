@@ -83,6 +83,3 @@ def fibonacci_for(n):
     return fibonacci_for(n-1) + fibonacci_for(n-2)
 
 print(fibonacci_for(6))
-
-
-# 람다 함수 실습(Leader)

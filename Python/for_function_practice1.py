@@ -174,6 +174,7 @@ def fib_num2(c):
 
 print(fib_num2(6))
 
+# 람다 실습(Leader)
 students = [("Alice", [80,90]), ("Bob", [60,65]), ("Charlie", [70,70])]
 print(list(filter(lambda s: sum(s[1] )/ len(s[1]) >= 70, students)))
 
@@ -181,4 +182,5 @@ sentences = ["Python is fun", "Lambda functions are powerful", "Coding is creati
 print(list(map(lambda str: str.split()[0], sentences)))
 
 people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
-print(sorted(people, key=lambda x : x[1]))
+result = sorted(people, key=lambda person: person[1])
+print(result)
