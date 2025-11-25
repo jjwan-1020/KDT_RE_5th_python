@@ -44,14 +44,14 @@ class Book:
     def progress(self):
         percent = (self.current_page / self.total_pages) * 100
         print(f"읽은 비율은 {percent:.1f}%입니다")
-    def print_info(self):
+    def printinfo(self):
         print(f"제목은 {self.title}입니다.")
         print(f"저자는 {self.author}입니다")
         print(f"전체 페이지는 {self.total_pages}입니다")
         print(f"현재 페이지는 {self.current_page}입니다")
 
 book1 = Book("노인과 바다", "어니스트 헤밍웨이", 193, 75)
-book1.print_info()
+book1.printinfo()
 book1.read_page(50)
 book1.progress()
         
@@ -265,4 +265,137 @@ s = Student(85)
 print(f"이 학생의 점수는 {s.score}점 입니다") 
 
 
+# 상속
+# 부모 클래스의 속성과 메서드를 물려받아 새로운 자녀 클래스를 만드는 것
+
+# 상속 기본 문법
+# 부모 클래스
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        
+
+    def bark(self):
+        print("동물이 울음소리를 냅니다.")
+
+# 자식 클래스
+class Dog(Animal):
+    pass
+    
+
+dog = Dog("구름이")
+dog.bark()
+print(dog.name)        
+
+
+# super 클래스
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("동물이 울음소리를 냅니다.")
+
+class Dog(Animal):
+    def __init__(self, name, age, species):
+        # super 는 부모님을 가리킴
+        super().__init__(name, age)
+        self.species = species
+
+        #오버라이딩
+    def bark(self):
+        super().bark()
+        print("멍멍")
+
+
+dog = Dog("구름이", 12, "포메라니안")
+dog.bark()
+print(dog.name)
+print(dog.age)
+print(dog.species)
+
+
+# 실습 4
+class Shape:
+    def __init__(self, sides, base):
+        self.sides = sides
+        self.base = base
+    def printinfo(self):
+        print(f"변의 개수: {self.sides}")
+        print(f"밑변의 길이: {self.base}")
+
+    def area(self):
+        print("넓이 계산이 정의되지 않았습니다.")
+
+    
+class Rectangle(Shape):
+    def __init__(self, sides, base, height):
+        super().__init__(sides, base)
+        self.height = height
+    
+    def area(self):
+        print(self.base * self.height)
+
+class Triangle(Shape):
+    def __init__(self, sides, base, height):
+        super().__init__(sides, base)
+        self.height = height
+
+    def area(self):
+        print((self.base * self.height) / 2)
+
+s = Shape(4, 9)
+s.printinfo()
+s.area()
+
+r = Rectangle(4, 9, 3)
+r.printinfo()
+r.area()
+t = Triangle(5, 3, 8)
+t.printinfo()
+t.area()
+
+
+
+# 추상 클래스 (Abstract Class)
+# 클래스의 구조를 정의하는 클래스
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    # 추상 메서드
+    @abstractmethod
+    def bark(self):
+        pass
+
+class Dog(Animal):
+    def bark(self):
+        print("멍멍")
+
+# a = Animal() > 에러가 뜬다
+a= Dog()
+a.bark()
+
+
+# 실습 5
+
+from abc import ABC, abstractmethod
+class Payment(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+class CardPayment(Payment):
+    def pay(self, amount):
+        print(f"이 카드로 {amount}원을 결제합니다.")
+
+class CashPayment(Payment):
+    def pay(self, amount):
+        print(f"현금으로 {amount}원을 결제합니다.")
+
+c = CardPayment()
+c.pay(15000)
+a_c = CashPayment()
+a_c.pay(12000)
 
