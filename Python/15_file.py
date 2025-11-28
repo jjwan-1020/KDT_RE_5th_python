@@ -95,16 +95,18 @@ with open("words.txt", "r", encoding="utf-8") as f1:
 
 
 # 예제 2. 입력 받아 파일 쓰기
+'''
 with open("with_example.txt", "a", encoding="utf-8") as f1:
     while True:
         text = input("저장할 내용을 입력해주세요.(종료 : z)")
         if text == "Z" or text =="z":
             break
         f1.write(text + "\n")
-
+'''
 
 
 # 실습 1
+'''
 import os
 with open("member.txt", "w", encoding="utf-8") as f2:
     for i in range(3):
@@ -142,5 +144,34 @@ for line in tel_lines:
         else:
             new_tel = input("새로운 전화번호를 입력해주세요.: ")
             print("새로운 전화번호가 등록되었습니다.")
- 
+''' 
             
+# 바이너리 파일 읽기
+import os
+print(os.getcwd())
+with open('./Python/images/recycle.jpg', 'rb')as f:
+    img = f.read()
+    print(img)
+
+# 바이너리 파일 쓰기
+with open("./Python/images/recycle_copy.jpg", "wb") as f:
+    f.write(img)
+
+
+# pickle모듈
+# - 객체의 형태를 유지하면서 파일에 저장하고 불러올 수 있음
+
+import pickle
+# 리스트, 딕셔너리 파일 저장
+with open('pickle.txt', 'wb') as f:
+    li = ['dog', 'cat']
+    dic = {1: 'dog', 2: 'cat'}
+
+    pickle.dump(li, f)
+    pickle.dump(dic, f)
+
+# 읽기
+with open('pickle.txt', 'rb') as f:
+    li = pickle.load(f)
+    dic = pickle.load(f)
+    print(li, dic)

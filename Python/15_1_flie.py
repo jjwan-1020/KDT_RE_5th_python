@@ -8,7 +8,7 @@ with open("m_leader.txt", "w", encoding="utf-8") as f:
         password = input(f"{i+1}번째 회원 비번.: ")
         f.write(f"{name}, {password}\n")
 
-print("\n[회원 명부 저장 완료]")
+print("\n[회원 명부 저장 완료]\n")
 
 input_name = input("이름을 입력하세요: ")
 input_password = input("비밀번호를 입력하세요: ")
