@@ -1,3 +1,4 @@
+
 def solution(a,b):
     concat = int(str(a) + str(b))
     mult = 2 * a *b
