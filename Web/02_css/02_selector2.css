@@ -1,0 +1,59 @@
+.div1 {
+    width:200px;
+    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: lightblue;
+    cursor: pointer;
+}
+/* hover */
+.div1:hover {
+    background-color: lightgreen;
+}
+
+/* active */
+.div1:active {
+    background-color: lightcoral;
+
+}
+
+.btn {
+    margin-top: 20px;
+    background-color: aqua;
+    cursor: pointer;
+    padding: 10px
+}
+.btn:active {
+    background-color: orange;
+}
+/* focus */
+input:focus {
+    background-color: yellow;
+}
+
+/* 가상 클래스 선택자 */
+.fruits *:first-child {
+    background-color: red;
+}
+
+.fruits *:last-child {
+    background-color: blueviolet;
+}
+.fruits li:nth-child(2) {
+    background-color: green;
+}
+.fruits li:nth-child(2n + 1) {
+    background-color: tomato;
+}
+.fruits *:not(li) {
+    color: blue;
+}
+
+/* 가상 요소 선택자 */ 
+.box::after {
+    content: '목록';
+
+}
+.box::before {
+    content: '추천'
+}

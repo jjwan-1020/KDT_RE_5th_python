@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    background: #ffffff;
+}
+.segment {
+    position: absolute;
+    border-radius: 50%;
+}
+.head {
+    width: 90px;
+    height: 90px;
+    background: #061dbb;
+    top: 80px;
+    left: 120px;
+    z-index: 5;
+}
+.eye {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    top: 20px;
+    left: 45px;
+    z-index: 6;
+}
+.eye::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: black;
+    top: 9px;
+    left: 6px;
+}
+.body {
+    width: 85px;
+    height:85px;
+}
