@@ -1,29 +1,21 @@
-int LEDS[]= {10,11,12};
-int count = 3; // 배열 요소의 수가 달라져도 해당 변수값만 수정하면 됨
+int RED_LED = 10;
+int GREEN_LED = 11;
+int BLUE_LED = 12;
 
 void setup() {
- for (int i = 0; i < 3; i++){
-  pinMode(LEDS[i], OUTPUT);
-  delay(500);
-  }
- }
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+}
 
-void turnOnALL() {
- for (int i = 0; i < 3; i++){
-  pinMode(LEDS[i], OUTPUT);
-  delay(500);
-  }
- }
-
-void turnOffALL() {
- for (int i = 0; i < 3; i++){
-  pinMode(LEDS[i], OUTPUT);
-  delay(500);
-  }
- }
 void loop() {
-  turnOnALL();
-delay(500)
+  digitalWrite(10, HIGH);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  delay(500);
 
-  turnOffALL();
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  delay(500);
 }

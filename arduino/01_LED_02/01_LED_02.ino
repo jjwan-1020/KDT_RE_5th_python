@@ -1,14 +1,24 @@
-int LED_PIN = 3; // 사용할 핀 번호를 변수화
+int RED_LED = 10;
+int Green_LED = 11;
+int Blue_LED = 12;
 
 void setup() {
-  pinMode(LED_PIN, OUTPUT); //디지털 3번 핀을 출력으로 사용한다 정의
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
 }
-
 
 void loop() {
-  digitalWrite(LED_PIN, HIGH);  // 3번 핀을 HIGH(5v)로 출력 => LED 켜짐
-  delay(1000);            // LED가 켜진 상태로 1초 중지          
-  digitalWrite(LED_PIN, LOW);   // 3번 핀을 LOW(0v)로 출력 => LED 꺼짐
-  delay(1000);            // LED가 꺼진 상태로 1초 중지
+  digitalWrite(10, HIGH);
+  delay(500);
+  digitalWrite(10, HIGH);
+  delay(500);
+  digitalWrite(11, HIGH);
+  delay(500);
+  digitalWrite(11, LOW);
+  delay(500);
+  digitalWrite(12, LOW);
+  delay(500);
+  digitalWrite(12, LOW);
+  delay(500);
 }
-

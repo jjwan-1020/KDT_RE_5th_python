@@ -1,20 +1,10 @@
-int LEDS[]= {10,11,12};
-int count = 3; // 배열 요소의 수가 달라져도 해당 변수값만 수정하면 됨
-
 void setup() {
- for (int i = 0; i < 3; i++){
-  pinMode(LEDS[i], OUTPUT);
-  }
- }
-
+    pinMode(3, OUTPUT);
+}
 
 void loop() {
-   for (int i = 0; i < 3; i++) {
-    digitalWrite(LEDS[i], HIGH);
-    delay(500);
-   }
-   // delay(500); //여기에 써도 괜찮음. 그냥 동작 방식이 달라지는 것
-    for (int i = 0; i < 3; i++){
-    pinMode(LEDS[i], LOW;);
-    }
+    digitalWrite(3, HIGH); // 3번 핀을 high (5볼트)로 출력 > LED 켜짐
+    delay(1000); // LED가 켜진 상태로 1초 중지
+    digitalWrite(3, LOW) // 3번 핀을 low (0볼트)로 출력 > LED꺼짐
+    delay(1000); // LED가 꺼진 상태로 1초 중지
 }
