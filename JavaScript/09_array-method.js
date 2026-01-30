@@ -119,3 +119,30 @@ for (let i = 0; i < nums.length; i++) {
     sum2 += nums[i];
 }
 console.log(sum2); // 와 같다
+
+console.log("=================")
+
+// 4. for문
+let fruits = ['수박', '참외', '귤', '오렌지', '딸기'];
+
+// 4-1. 반복문
+for (let i = 0; i < fruits.length; i++) {
+    console.log(`for문 활용 배열의 ${i}번째 요소 출력: ${fruits[i]}`);
+}
+
+// 출력 결과
+// for문 활용 배열의 0번째 요소 출력: 수박
+// for문 활용 배열의 1번째 요소 출력: 참외
+// for문 활용 배열의 2번째 요소 출력: 귤
+// for문 활용 배열의 3번째 요소 출력: 오렌지
+// for문 활용 배열의 4번째 요소 출력: 딸기
+// -------
+// 4-2. for of문
+for (let fruit of fruits) { // fruits라는 배열로 부터 (of) 해당 배열의 요소들을 fruit라고 부르며 배열을 순회함
+    console.log(`for of문 활용 배열의 fruit 출력: ${fruit}`);
+}
+
+// 배열 메서드 foreach
+fruits.forEach((fruit, index) =>
+    (console.log(`forEach문 활용 배열의 ${index} 출력: ${fruit}`)),
+);
