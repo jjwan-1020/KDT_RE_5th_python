@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 function Header() {
   return (
     <header>
         <span>Router Tutorial</span>
         <ul>
-            <li>Home</li>
-            <li>Product</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/products">Products</Link></li>
         </ul>
     </header>
   )
