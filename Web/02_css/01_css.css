@@ -1,0 +1,40 @@
+ul {
+    background-color: aqua;
+}
+
+li {
+    background-color: lightblue;
+}
+
+.box {
+    height: 40px;
+    margin-bottom: 0px;
+}
+.red {
+    background-color: red;
+    width: 40px;
+}
+.orange {
+    background-color: orange;
+    width: 80px;
+}
+.yellow {
+    background-color: yellow;
+    width: 120px;
+}
+.green {
+    background-color: green;
+    width: 160px;
+}
+.blue {
+    background-color: blue;
+    width: 200px;
+}
+.navy {
+    background-color: navy;
+    width: 240px;
+}
+.purple {
+    background-color: purple;
+    width: 280px;
+}

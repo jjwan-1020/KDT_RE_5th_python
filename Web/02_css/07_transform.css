@@ -1,0 +1,40 @@
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    text-align: center;
+    align-content: center;
+    display: flex;
+    gap: 10px;
+        }
+
+    /* 이동 */
+.move:hover {
+    /*transform: translateX(100px);*/
+    transform: translateY(100px);
+    }
+
+
+/* 확대 */
+.scale:hover {
+    /*transform: scale(1.5)*/
+    transform: scaleX(2);
+}
+
+.rotate:hover {
+    transform: rotate(45deg);
+}
+
+.skew:hover {
+    transform: skew(10deg);
+}
+
+/* 트렌지션 */
+
+.bg {
+    transition: background-color 0.5s ease, font-size 0.5s ease;
+}
+
+.bg:hover {
+    background-color: aliceblue;
+}

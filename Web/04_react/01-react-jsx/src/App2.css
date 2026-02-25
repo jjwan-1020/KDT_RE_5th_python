@@ -1,0 +1,27 @@
+.container {
+    width: 300px;
+    margin: 48px anto;
+    text-align: center;
+}
+
+.title {
+    background-color: #fdebd3;
+    color: #c96a1b;
+    padding: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.form-row {
+    margin-bottom: 12px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input {
+    width: 160px;
+    padding: 4px;
+}
